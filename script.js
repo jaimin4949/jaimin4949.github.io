@@ -1,8 +1,9 @@
 $(document).ready(function(){
     const loadingPage = document.getElementsByClassName('loading')[0];
 
-    window.addEventListener('load', () => {
+    $(window).load(function(){
         loadingPage.style.animation = 'loadingFade 0.5s ease-in 1 forwards';
+        console.log('done');
     });
     
     $(window).scroll(function(){
