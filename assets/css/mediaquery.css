@@ -62,7 +62,6 @@
 }
 
 @media (max-width:470px) {
-    .hide{display: none;}
     .navbar{padding-right: 0;}
     .header .navbar .navbar-collapse .close-icon{padding: 10px}
     .header .navbar .navbar-nav{padding: 100px 30px;}
