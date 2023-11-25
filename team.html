@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mediaquery.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" crossorigin="anonymous">
+    
+    <style>
+        body {
+            background-color: #100F15;
+            color: aliceblue;
+        }
+
+        .our-team-collection-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .collection-item-4 {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .our-team img {
+            border-radius: 50%;
+            width: 200px;
+            /* Adjust image size as needed */
+            height: 200px;
+            /* Adjust image size as needed */
+            object-fit: cover;
+            object-position: center;
+            border: 5px solid #6366F1;
+            /* Optional: Add a border to images */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #6366F1;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- <header section start here> -->
+            <header class="header">
+                <nav class="navbar">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-logo">
+                            <a href="./index.html">
+                                <img src="./assets/images/ictt.png" alt="logo" class="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <div class="close-icon">
+                            <span class="navbar-close" type="button" data-toggle="collapse" data-target="#myNavbar"
+                                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                                <a href="#">
+                                    <img src="./assets/images/menu-close-icon.svg" alt="close icon">
+                                </a>
+                            </span>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="navbar-item"><a class="navbar-link" href="./news.html">Cybersecurity news feed </a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="./cve.html">CVE</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="./article.html">Articles</a></li>
+                            <!-- <li class="navbar-item"><a class="navbar-link" href="#subscribe">Subscribe</a></li> -->
+                            <li class="navbar-item"><a class="navbar-link" href="./ctf.html">CTF updates</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="./contact-us.html">Contact Us</a></li>
+                            <div class="btn-connect">
+                                <a href="./login.html" class="button">Login</a>
+                            </div>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        <!-- <header section start here> -->
+    </div>
+
+    <div class="main-container">
+
+        <div class="container">
+            <h1 class="title">Our Team</h1>
+            <div class="our-team-collection-list">
+                <div class="collection-item-4">
+                    <div class="our-team">
+                        <img src="/assets/images/jaimin1.jpg" loading="lazy" alt="" class="image-3" />
+                        <div class="h2-b2 center">
+                            <h3 class="h3 center white">Jaimin Gondaliya</h3>
+                            <p class="b2 center white">CEH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item-4">
+                    <div class="our-team">
+                        <img src="/assets/images/niyati1.jpg" loading="lazy" alt="" class="image-3" />
+                        <div class="h2-b2 center">
+                            <h3 class="h3 center white">Niyati</h3>
+                            <p class="b2 center white">CEH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item-4">
+                    <div class="our-team">
+                        <img src="/assets/images/sreshtha.png" loading="lazy" alt="" class="image-3" />
+                        <div class="h2-b2 center">
+                            <h3 class="h3 center white">Sreshtha</h3>
+                            <p class="b2 center white">CEH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <footer section start here> -->
+        <footer class="footer">
+            <div class="footer-description">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="block-description">
+                            <p>Copyright © 2023 jaimingondaliya.in All rights reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-detail">
+                            <ul>
+                                <li><a href="./contact-us.html">Contact us</a></li>
+                                <li><a href="./team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- <footer section start here> -->
+    </div>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(".navbar-nav .navbar-item").click(function () {
+                var custom_hash = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(custom_hash).offset().top - 100
+                }, 2000);
+            });
+        });
+
+        function fixedHeader() {
+            if ($(window).scrollTop() >= $(".navbar").outerHeight()) {
+                $(".navbar").addClass("fixed");
+            } else {
+                $(".navbar").removeClass("fixed");
+            }
+        }
+
+        $(window).scroll(function () {
+            fixedHeader();
+        });
+        fixedHeader();
+
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        //window.onload = function() {
+        var elements = document.getElementsByClassName('color-font');
+        for (var i = 0; i < elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".color-font > .wrap { border-right: 3px solid;font-size:78px;line-height:70px;display:inline-block;}";
+        document.body.appendChild(css);
+        //};
+
+    </script>
+</body>
+
+</html>
