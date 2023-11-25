@@ -61,12 +61,13 @@
     /******footer section end here******/
 }
 
-@media (max-width:375px) {
+@media (max-width:470px) {
+    .hide{display: none;}
     .navbar{padding-right: 0;}
     .header .navbar .navbar-collapse .close-icon{padding: 10px}
     .header .navbar .navbar-nav{padding: 100px 30px;}
     .header .navbar .navbar-header .header-logo{padding: 21px 0 19px 18px;}
-    .header .navbar.fixed{border: 1px solid #fff;}
+    .header .navbar.fixed{border-bottom: 1px solid #fff;}
 
     .banner-container .banner-box .block-title{font-size: 35px; line-height: 58px; min-height: 180px;}
     .banner-container .banner-box .block-title .color-font{display: block; height: 58px;}
