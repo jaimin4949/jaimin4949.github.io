@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7f7f7;
+    }
+    
+    .construction-wrapper {
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+    
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .countdown {
+      font-size: 24px;
+      color: #ff5733;
+    }
+  </style>
+</head>
+<body>
+  <div class="construction-wrapper">
+    <h1>Site Under Construction</h1>
+    <p>Sorry, we're still working on this page. Please check back soon!</p>
+    <div class="countdown">
+      <p id="countdown"></p>
+    </div>
+  </div>
+
+  <script>
+    const launchDate = new Date('December 31, 2023 00:00:00').getTime();
+
+    const countdown = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').innerHTML = `${days}d $
