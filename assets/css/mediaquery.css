@@ -61,7 +61,7 @@
     /******footer section end here******/
 }
 
-@media (max-width:375px) {
+@media (max-width:470px) {
     .navbar{padding-right: 0;}
     .header .navbar .navbar-collapse .close-icon{padding: 10px}
     .header .navbar .navbar-nav{padding: 100px 30px;}
