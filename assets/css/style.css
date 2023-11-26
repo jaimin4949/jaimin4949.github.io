@@ -250,7 +250,7 @@ body {
 }
 
 .img-sectiopn .img-con {
-    background-image: url("../images/article.jpg");
+    background-image: url("/assets/images/article.jpg");
     width: 100%;
     position: absolute;
     height: 870px;
