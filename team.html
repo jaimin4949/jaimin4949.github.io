@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mediaquery.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+    
+    <style>
+        body {
+            background-color: #100F15;
+            color: aliceblue;
+        }
+
+        .our-team-collection-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 28px;
+        }
+
+        .collection-item-4 {
+            margin: 20px 30px;
+            text-align: center;
+        }
+
+        .our-team img {
+            border-radius: 50%;
+            width: 200px;
+            /* Adjust image size as needed */
+            height: 200px;
+            /* Adjust image size as needed */
+            object-fit: cover;
+            object-position: center;
+            border: 5px solid #6366F1;
+            /* Optional: Add a border to images */
+            transition: all .5s linear;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #6366F1;
+            margin-top: 80px;
+        }
+        h3{padding: 20px 0 0 0;}
+        .icon{padding: 10px 0 0 0; display: block;}
+        .our-team:hover img{transform: scale(1.1);}
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- <header section start here> -->
+            <header class="header">
+                <nav class="navbar">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-logo">
+                            <a href="./index.html">
+                                <img src="./assets/images/ictt.png" alt="logo" class="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <div class="close-icon">
+                            <span class="navbar-close" type="button" data-toggle="collapse" data-target="#myNavbar"
+                                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                                <a href="#">
+                                    <img src="./assets/images/menu-close-icon.svg" alt="close icon">
+                                </a>
+                            </span>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="navbar-item"><a class="navbar-link" href="./news.html">News</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="./cve.html">CVE's</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="./article.html">Articles</a></li>
+                            <!-- <li class="navbar-item"><a class="navbar-link" href="#subscribe">Subscribe</a></li> -->
+                            <li class="navbar-item"><a class="navbar-link" href="./ctf.html">CTF</a></li>
+                            <li class="navbar-item"><a class="navbar-link" href="./contact-us.html">Contact Us</a></li>
+                            <div class="btn-connect">
+                                <a href="./login.html" class="button">Login</a>
+                            </div>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        <!-- <header section start here> -->
+    </div>
+
+    <div class="main-container team-box">
+
+        <div class="container">
+            <h1 class="block-title">Our Team</h1>
+            <div class="our-team-collection-list">
+                <div class="collection-item-4">
+                    <div class="our-team">
+                        <img src="/assets/images/jaimin.jpg" loading="lazy" alt="" class="image-3" />
+                        <div class="h2-b2 center">
+                            <h3 class="h3 center white">Jaimin</h3>
+                            <a href="https://www.linkedin.com/in/jaimin07/" target="_blank" class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item-4">
+                    <div class="our-team">
+                        <img src="/assets/images/niyati1.jpg" loading="lazy" alt="" class="image-3" />
+                        <div class="h2-b2 center">
+                            <h3 class="h3 center white">Niyati</h3>
+                            <a href="https://www.linkedin.com/in/niyati-raikar-2071422a1/" class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item-4">
+                    <div class="our-team">
+                        <img src="/assets/images/sreshtha.png" loading="lazy" alt="" class="image-3" />
+                        <div class="h2-b2 center">
+                            <h3 class="h3 center white">Sreshta</h3>
+                            <a href="https://www.linkedin.com/in/sreshta-p-b673992a1/" class="icon"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <footer section start here> -->
+        <footer class="footer">
+            <div class="footer-description">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="block-description">
+                            <p>Copyright © 2023 jaimingondaliya.in All rights reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-detail">
+                            <ul>
+                                <li><a href="./contact-us.html">Contact us</a></li>
+                                <li><a href="./team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- <footer section end here> -->
+    </div>
+
+
+</body>
+
+</html>
