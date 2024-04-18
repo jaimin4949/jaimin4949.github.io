@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Under Construction</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.terminal {
+  width: 80%;
+  max-width: 600px;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #222;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons > div {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.content {
+  padding: 20px;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="terminal">
+  <div class="header">
+    <div class="buttons">
+      <div class="close"></div>
+      <div class="minimize"></div>
+      <div class="expand"></div>
+    </div>
+    <div class="title">Under Construction</div>
+  </div>
+  <div class="content">
+    <p>This page is currently under construction. Please check back later.</p>
+  </div>
+</div>
+<script>
+document.querySelector('.close').addEventListener('click', () => {
+  window.close();
+});
+
+document.querySelector('.minimize').addEventListener('click', () => {
+  // Minimize the terminal (you can add your own logic here)
+});
+
+document.querySelector('.expand').addEventListener('click', () => {
+  // Expand the terminal (you can add your own logic here)
+});
+</script>
+</body>
+</html>
