@@ -55,10 +55,22 @@ body {
 .content {
   padding: 20px;
   color: #fff;
+  white-space: pre-line;
 }
 
-p {
-  margin: 0;
+.typing::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: #fff;
+  margin-left: 3px;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #fff; }
 }
 </style>
 </head>
@@ -72,22 +84,26 @@ p {
     </div>
     <div class="title">Under Construction</div>
   </div>
-  <div class="content">
+  <div class="content typing">
     <p>This page is currently under construction. Please check back later.</p>
   </div>
 </div>
 <script>
-document.querySelector('.close').addEventListener('click', () => {
-  window.close();
-});
+const text = "This page is currently under construction. Please check back later.";
+let index = 0;
 
-document.querySelector('.minimize').addEventListener('click', () => {
-  // Minimize the terminal (you can add your own logic here)
-});
+function type() {
+  document.querySelector('.typing').textContent = text.slice(0, index);
+  index++;
 
-document.querySelector('.expand').addEventListener('click', () => {
-  // Expand the terminal (you can add your own logic here)
-});
+  if (index > text.length) {
+    index = 0;
+  }
+
+  setTimeout(type, 100);
+}
+
+type();
 </script>
 </body>
 </html>
