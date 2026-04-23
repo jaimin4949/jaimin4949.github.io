@@ -1,146 +1,312 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Under Construction</title>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,system-ui}
-
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#0b0f17;
-color:#e6eaf2;
-overflow:hidden;
-}
-
-/* BACKGROUND GRID ANIMATION */
-body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:
-linear-gradient(#1a2233 1px,transparent 1px),
-linear-gradient(90deg,#1a2233 1px,transparent 1px);
-background-size:60px 60px;
-animation:moveGrid 20s linear infinite;
-opacity:.3;
-}
-
-@keyframes moveGrid{
-0%{transform:translate(0,0)}
-100%{transform:translate(-60px,-60px)}
-}
-
-.container{
-text-align:center;
-z-index:2;
-max-width:700px;
-padding:40px;
-background:#111624;
-border:1px solid #2a2f3a;
-border-radius:14px;
-box-shadow:0 0 40px rgba(0,0,0,.6);
-animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(30px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-h1{
-font-size:38px;
-margin-bottom:10px;
-letter-spacing:1px;
-}
-
-.glow{
-color:#5b8cff;
-text-shadow:0 0 8px #5b8cff66;
-}
-
-.typing{
-font-size:18px;
-color:#9aa4b2;
-margin-top:20px;
-min-height:24px;
-}
-
-.loader{
-margin:30px auto 0;
-width:60px;
-height:60px;
-border-radius:50%;
-border:3px solid #2a2f3a;
-border-top:3px solid #5b8cff;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg)}
-}
-
-.footer{
-margin-top:25px;
-font-size:14px;
-color:#7d8796;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f0f0f0}
+.header-top{background:#1a3a6b;padding:6px 0}
+.header-top .container{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 16px;flex-wrap:wrap;gap:4px}
+.top-links{display:flex;flex-wrap:wrap;gap:6px}
+.top-links a{color:#ccc;font-size:11px;text-decoration:none}
+.top-links a:hover{color:#fff}
+.header-main{background:#fff;padding:10px 0;border-bottom:2px solid #e0e0e0}
+.header-main .container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:0 16px}
+.logo-area{display:flex;align-items:center;gap:10px}
+.logo-circle{width:54px;height:54px;border-radius:50%;background:#1a3a6b;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-circle span{color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:1.2}
+.org-name{font-size:15px;font-weight:700;color:#1a3a6b;line-height:1.3}
+.org-sub{font-size:11px;color:#555}
+.search-login{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-box{display:flex;border:1px solid #ccc;border-radius:4px;overflow:hidden}
+.search-box input{border:none;outline:none;padding:6px 10px;font-size:13px;width:220px}
+.search-box button{background:#1a3a6b;color:#fff;border:none;padding:6px 12px;cursor:pointer;font-size:13px}
+.login-btn{background:#1a3a6b;color:#fff;border:none;padding:7px 18px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:600}
+.navbar{background:#1a3a6b}
+.navbar .container{max-width:1100px;margin:0 auto;display:flex;padding:0 16px}
+.navbar a{color:#fff;text-decoration:none;padding:12px 14px;display:inline-block;font-size:13px;border-right:1px solid rgba(255,255,255,0.15)}
+.navbar a:hover{background:rgba(255,255,255,0.15)}
+.banner{background:linear-gradient(135deg,#1a3a6b 0%,#2a5cb8 60%,#4a8de0 100%);padding:32px 16px;text-align:center;position:relative;overflow:hidden}
+.banner::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect fill="%23ffffff08" x="10" y="10" width="180" height="80" rx="4"/></svg>') center/cover;opacity:0.3}
+.banner h1{color:#fff;font-size:22px;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.4);position:relative}
+.banner p{color:#b8d4f8;font-size:12px;margin-top:6px;position:relative}
+.banner-badge{display:inline-block;border:1px solid #fff;color:#fff;font-size:10px;padding:3px 10px;border-radius:2px;margin-top:8px;letter-spacing:1px;position:relative}
+.breadcrumb{background:#fff;border-bottom:1px solid #ddd;padding:8px 16px;max-width:1100px;margin:0 auto;font-size:12px;color:#555;display:flex;align-items:center;gap:6px}
+.breadcrumb span{color:#1a3a6b}
+.main-content{max-width:1100px;margin:20px auto;padding:0 16px;display:flex;gap:20px}
+.sidebar{width:220px;flex-shrink:0}
+.sidebar-header{background:#1a3a6b;color:#fff;font-size:13px;font-weight:700;padding:10px 14px;border-radius:4px 4px 0 0}
+.sidebar-nav{background:#fff;border:1px solid #ddd;border-top:none;border-radius:0 0 4px 4px;overflow:hidden}
+.sidebar-nav a{display:block;padding:10px 14px;font-size:12px;color:#333;text-decoration:none;border-bottom:1px solid #f0f0f0;transition:background 0.15s}
+.sidebar-nav a:hover{background:#e8f0fb;color:#1a3a6b}
+.sidebar-nav a.active{background:#1a3a6b;color:#fff}
+.content-box{flex:1;min-width:0}
+.content-header{background:#1a3a6b;color:#fff;font-size:14px;font-weight:700;padding:12px 16px;border-radius:4px 4px 0 0;letter-spacing:0.5px}
+.content-body{background:#fff;border:1px solid #ddd;border-top:none;border-radius:0 0 4px 4px;padding:24px}
+.form-row{display:flex;align-items:center;margin-bottom:16px;gap:10px;flex-wrap:wrap}
+.form-row label{width:160px;font-size:13px;font-weight:600;color:#333;text-align:right;flex-shrink:0}
+.form-row input{flex:1;min-width:200px;max-width:300px;border:1px solid #bbb;border-radius:3px;padding:8px 10px;font-size:13px;outline:none;font-family:monospace;letter-spacing:1px}
+.form-row input:focus{border-color:#1a3a6b;box-shadow:0 0 0 2px rgba(26,58,107,0.15)}
+.form-row input.valid{border-color:#2a7d2a}
+.form-row input.invalid{border-color:#c0392b}
+.format-hint{text-align:center;font-size:12px;color:#e74c3c;margin-bottom:16px}
+.btn-search{background:#1a3a6b;color:#fff;border:none;padding:9px 28px;border-radius:3px;font-size:13px;font-weight:700;cursor:pointer;transition:background 0.15s}
+.btn-search:hover{background:#2a5cb8}
+.btn-center{text-align:center;margin-bottom:18px}
+.notes{font-size:11.5px;color:#c0392b;line-height:1.7;background:#fff8f8;border:1px solid #f5c6c6;border-radius:3px;padding:12px 14px}
+.notes strong{display:block;margin-bottom:4px}
+.error-msg{font-size:11px;color:#c0392b;margin-left:4px}
+.result-area{margin-top:20px;display:none}
+.result-table{width:100%;border-collapse:collapse;font-size:13px}
+.result-table th{background:#1a3a6b;color:#fff;padding:9px 12px;text-align:left;font-size:12px}
+.result-table td{padding:9px 12px;border-bottom:1px solid #eee}
+.result-table tr:nth-child(even) td{background:#f8f8f8}
+.result-table .amount{font-weight:700;color:#c0392b}
+.result-table .paid{color:#2a7d2a;font-weight:700}
+.result-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.action-btn{padding:8px 16px;border:1px solid #1a3a6b;background:#fff;color:#1a3a6b;border-radius:3px;font-size:12px;cursor:pointer;transition:background 0.15s}
+.action-btn:hover{background:#1a3a6b;color:#fff}
+.footer{background:#1a3a6b;color:#fff;padding:20px 16px;margin-top:30px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.footer h5{font-size:13px;margin-bottom:8px;color:#b8d4f8}
+.footer p,.footer a,.footer li{font-size:11px;color:#ccc;text-decoration:none;line-height:2}
+.footer li{list-style:none}
+.footer-bottom{background:#0f2447;color:#aaa;font-size:11px;text-align:center;padding:10px}
+.loading{display:none;text-align:center;padding:20px;color:#1a3a6b;font-size:13px}
 </style>
-</head>
 
-<body>
+<div style="background:#f0f0f0;min-height:100vh">
+<div class="header-top">
+  <div class="container">
+    <div class="top-links">
+      <a href="#">Home</a><span style="color:#555">|</span>
+      <a href="#">About Us</a><span style="color:#555">|</span>
+      <a href="#">Feedback</a><span style="color:#555">|</span>
+      <a href="#">Sitemap</a><span style="color:#555">|</span>
+      <a href="#">Contact Us</a>
+    </div>
+    <div style="color:#aaa;font-size:11px" id="datetime"></div>
+  </div>
+</div>
 
-<div class="container">
-<h1 class="glow">🚧 Under Construction</h1>
-<p class="typing" id="typing"></p>
+<div class="header-main">
+  <div class="container">
+    <div class="logo-area">
+      <div class="logo-circle"><span>AMC</span></div>
+      <div>
+        <div class="org-name">Amdavad Municipal Corporation</div>
+        <div class="org-sub">અમદાવાદ મ્યુનિસિપલ કોર્પોરેશન</div>
+      </div>
+    </div>
+    <div class="search-login">
+      <div class="search-box">
+        <input type="text" placeholder="Search in Website for...">
+        <button>&#128269;</button>
+      </div>
+      <button class="login-btn">Log In</button>
+    </div>
+  </div>
+</div>
 
-<div class="loader"></div>
+<div class="navbar">
+  <div class="container">
+    <a href="#">The City</a>
+    <a href="#">Corporation</a>
+    <a href="#" style="background:rgba(255,255,255,0.2)">Online Services</a>
+    <a href="#">Citizen Facilities</a>
+    <a href="#">Public Information</a>
+    <a href="#">Downloads</a>
+  </div>
+</div>
 
-<p class="footer">Building something powerful in cybersecurity...</p>
+<div class="banner">
+  <h1>AHMEDABAD CITY AS INDIA'S BEST<br>CITY TO LIVE-IN, IN TERMS OF INFRASTRUCTURE</h1>
+  <div class="banner-badge">A TIMES OF INDIA SURVEY RANKS</div>
+</div>
+
+<div style="background:#fff;border-bottom:1px solid #ddd">
+  <div class="breadcrumb">
+    <span style="color:#1a3a6b">&#8962;</span>
+    <span style="color:#888">/</span>
+    <span>Online Services</span>
+    <span style="color:#888">|</span>
+    <span style="font-weight:600">Property Tax</span>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="sidebar">
+    <div class="sidebar-header">Property Tax</div>
+    <div class="sidebar-nav">
+      <a href="#">Pay Property Tax</a>
+      <a href="#">Pay Name Transfer Fees</a>
+      <a href="#">Download Property Tax Receipt</a>
+      <a href="#">Download Name Transfer Receipt</a>
+      <a href="#">Check Paid and Dues Details</a>
+      <a href="#">Tax Dues Certificate</a>
+      <a href="#">Know your Application Status</a>
+      <a href="#">Tax Calculation</a>
+      <a href="#" class="active">Search by Old Tenement No</a>
+    </div>
+  </div>
+
+  <div class="content-box">
+    <div class="content-header">TENEMENT DETAILS</div>
+    <div class="content-body">
+      <div class="form-row">
+        <label>Tenement No</label>
+        <input type="text" id="tenementNo" maxlength="15" placeholder="e.g. 01234567890001T" autocomplete="off">
+        <span class="error-msg" id="tenErrMsg"></span>
+      </div>
+      <div class="format-hint">The tenement number is the 15 digits number of the following format : <strong>01234567890001T</strong></div>
+      <div class="btn-center">
+        <button class="btn-search" onclick="searchTenement()">&#128269; Search</button>
+      </div>
+      <div class="loading" id="loadingMsg">&#9203; Searching tenement details, please wait...</div>
+      <div class="notes">
+        <strong>Note:</strong>
+        - Please wait for at least 30 minutes to retry the payment if it is not completed successfully.<br>
+        - If Re-trying: Please first check whether your bank account/card is already debited/charged with the amount of earlier transaction. If debited/charged please do not pay again.<br>
+        - If the tax amount is debited from your Bank Account but error page displayed or receipt not generated, Please wait as receipt will be generated in your profile within three working days after receiving the confirmation from your Bank.
+      </div>
+
+      <div class="result-area" id="resultArea">
+        <div style="border-top:2px solid #1a3a6b;margin:18px 0 14px"></div>
+        <div style="font-size:13px;font-weight:700;color:#1a3a6b;margin-bottom:10px">Tenement Details Found</div>
+        <table class="result-table" id="resultTable">
+          <tr><th colspan="2">Property Information</th></tr>
+          <tr><td>Tenement No</td><td id="rTenNo"></td></tr>
+          <tr><td>Owner Name</td><td id="rOwner"></td></tr>
+          <tr><td>Property Address</td><td id="rAddr"></td></tr>
+          <tr><td>Zone</td><td id="rZone"></td></tr>
+          <tr><td>Ward No</td><td id="rWard"></td></tr>
+          <tr><td>Usage Type</td><td id="rUsage"></td></tr>
+          <tr><td>Built-up Area (sq.m)</td><td id="rArea"></td></tr>
+          <tr><th colspan="2" style="background:#2a5cb8">Tax Information</th></tr>
+          <tr><td>Annual Ratable Value</td><td id="rARV"></td></tr>
+          <tr><td>Total Tax Due</td><td class="amount" id="rDue"></td></tr>
+          <tr><td>Last Payment Date</td><td id="rLastPay"></td></tr>
+          <tr><td>Payment Status</td><td id="rStatus"></td></tr>
+        </table>
+        <div class="result-actions">
+          <button class="action-btn" onclick="sendPrompt('How can I pay my property tax online for AMC?')">&#128179; Pay Now ↗</button>
+          <button class="action-btn">&#128196; Download Receipt</button>
+          <button class="action-btn">&#128203; Tax Dues Certificate</button>
+          <button class="action-btn" onclick="clearResult()">&#10006; Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div>
+      <h5>Amdavad Municipal Corporation</h5>
+      <p>Central Zone Office, Sardar Patel Bhavan,<br>Danapith - Khamasa,<br>Ahmedabad - 380001</p>
+      <p style="margin-top:6px">Phone: 079-25391811</p>
+      <p>Email: feedback@ahmedabadcity.gov.in</p>
+    </div>
+    <div>
+      <h5>Other Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact for Online Payment</h5>
+      <p>For any query regarding online payment of Property and Professional Tax:</p>
+      <p style="margin-top:6px">+91-9227898608<br>+91-9227898610</p>
+      <p style="margin-top:6px">feedback@ahmedabadcity.gov.in</p>
+    </div>
+  </div>
+</div>
+<div class="footer-bottom">Copyright &copy; 2025. Amdavad Municipal Corporation</div>
 </div>
 
 <script>
+const MOCK_DATA = {
+  "01234567890001T": {owner:"Ramesh Kumar Patel",addr:"12, Shyamal Row Houses, Near S.G. Highway, Satellite, Ahmedabad",zone:"West Zone",ward:"12",usage:"Residential",area:"85.50",arv:"₹42,500",due:"₹8,625",lastPay:"15-Mar-2025",status:"Partially Paid"},
+  "98765432100001T": {owner:"Sunita Devi Shah",addr:"45, Navrangpura Society, Navrangpura, Ahmedabad",zone:"Central Zone",ward:"5",usage:"Residential",area:"62.00",arv:"₹31,000",due:"₹0",lastPay:"10-Apr-2025",status:"Paid"},
+  "11223344556677T": {owner:"Mehta Brothers Pvt Ltd",addr:"Plot No 23, GIDC Industrial Area, Naroda, Ahmedabad",zone:"East Zone",ward:"18",usage:"Commercial",area:"320.00",arv:"₹1,85,000",due:"₹52,400",lastPay:"20-Jan-2024",status:"Due"},
+  "55667788990001T": {owner:"Priya Rajesh Desai",addr:"B-204, Swagat Bungalows, Bopal, Ahmedabad",zone:"South-West Zone",ward:"22",usage:"Residential",area:"110.25",arv:"₹58,000",due:"₹11,800",lastPay:"05-Feb-2025",status:"Partially Paid"},
+};
 
-/* ===== TYPEWRITER ANIMATION ===== */
-
-const text = [
-"Initializing secure portfolio...",
-"Loading offensive security modules...",
-"Deploying elite hacker interface...",
-"Stay tuned..."
-];
-
-let line = 0;
-let char = 0;
-const speed = 40;
-const typingEl = document.getElementById("typing");
-
-function type(){
-if(line < text.length){
-if(char < text[line].length){
-typingEl.textContent += text[line].charAt(char);
-char++;
-setTimeout(type,speed);
-}else{
-setTimeout(()=>{
-typingEl.textContent="";
-char=0;
-line++;
-type();
-},1200);
-}
-}
+function isValidFormat(val){
+  return /^[0-9A-Z]{10,15}$/.test(val);
 }
 
-type();
+const inp = document.getElementById('tenementNo');
+inp.addEventListener('input',function(){
+  this.value = this.value.toUpperCase().replace(/[^0-9A-Z]/g,'');
+  const v = this.value;
+  document.getElementById('tenErrMsg').textContent = '';
+  this.classList.remove('valid','invalid');
+  if(v.length > 0){
+    if(isValidFormat(v)){this.classList.add('valid');}
+    else{this.classList.add('invalid');}
+  }
+});
 
+inp.addEventListener('keydown',function(e){if(e.key==='Enter')searchTenement();});
+
+function searchTenement(){
+  const val = inp.value.trim();
+  const errEl = document.getElementById('tenErrMsg');
+  errEl.textContent = '';
+  inp.classList.remove('valid','invalid');
+  if(!val){errEl.textContent='Please enter a tenement number.';inp.classList.add('invalid');return;}
+  if(!isValidFormat(val)){errEl.textContent='Invalid format. Must be 10-15 alphanumeric chars ending in T.';inp.classList.add('invalid');return;}
+  document.getElementById('resultArea').style.display='none';
+  document.getElementById('loadingMsg').style.display='block';
+  setTimeout(function(){
+    document.getElementById('loadingMsg').style.display='none';
+    const d = MOCK_DATA[val];
+    if(d){
+      document.getElementById('rTenNo').textContent = val;
+      document.getElementById('rOwner').textContent = d.owner;
+      document.getElementById('rAddr').textContent = d.addr;
+      document.getElementById('rZone').textContent = d.zone;
+      document.getElementById('rWard').textContent = d.ward;
+      document.getElementById('rUsage').textContent = d.usage;
+      document.getElementById('rArea').textContent = d.area;
+      document.getElementById('rARV').textContent = d.arv;
+      document.getElementById('rDue').textContent = d.due;
+      document.getElementById('rLastPay').textContent = d.lastPay;
+      const st = document.getElementById('rStatus');
+      st.textContent = d.status;
+      st.style.color = d.status==='Paid'?'#2a7d2a':d.status==='Due'?'#c0392b':'#c07800';
+      st.style.fontWeight='700';
+      inp.classList.add('valid');
+      document.getElementById('resultArea').style.display='block';
+    } else {
+      errEl.textContent = 'No record found. Try: 01234567890001T, 98765432100001T, 11223344556677T, or 55667788990001T';
+      inp.classList.add('invalid');
+    }
+  },1200);
+}
+
+function clearResult(){
+  document.getElementById('resultArea').style.display='none';
+  inp.value='';
+  inp.classList.remove('valid','invalid');
+  document.getElementById('tenErrMsg').textContent='';
+}
+
+function updateDateTime(){
+  const now = new Date();
+  const d=String(now.getDate()).padStart(2,'0');
+  const m=new Intl.DateTimeFormat('en-US',{month:'short'}).format(now);
+  const y=now.getFullYear();
+  let h=now.getHours();
+  const mer=h>=12?'PM':'AM';
+  h=(h%12)||12;
+  const mi=String(now.getMinutes()).padStart(2,'0');
+  const s=String(now.getSeconds()).padStart(2,'0');
+  const el=document.getElementById('datetime');
+  if(el)el.textContent=d+'-'+m+'-'+y+' '+h+':'+mi+':'+s+' '+mer;
+}
+updateDateTime();
+setInterval(updateDateTime,1000);
 </script>
-
-</body>
-</html>
